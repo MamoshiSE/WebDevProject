@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "2e66861b-e3e3-450b-8dba-298ce530d94d",
+		"name": "Shop App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE PRODUCT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "001494be-23d7-44fc-a8de-4f62a9f8b36f",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"productId\", jsonData._id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n    \"name\": \"Cat\",\n    \"price\": 199,\n    \"image\": \"https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?resize=640%2C426\", \n    \"desc\": \"blabla\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL PRODUCTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PRODUCT WITH ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE PRODUCT WITH PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Cat\",\n    \"price\": 20,\n    \"image\": \"https://i2.wp.com/beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg?resize=640%2C426\",\n    \"desc\": \"changed after PUT\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"{{productId}}"
+					]
+				},
+				"description": "update product with PUT"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE PRODUCT WITH PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Dog\",\n\t\"desc\": \"changed after PATCH\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"{{productId}}"
+					]
+				},
+				"description": "product change with PATCH"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a255da5f-f5ee-45b7-8410-c1983959c4c9",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"userId\", jsonData._id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"user\",\n\t\"isAdmin\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Create user"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "get all users"
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER WITH ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/users/{{userId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				},
+				"description": "Get user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER WITH PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"user\",\n\t\"isAdmin\": false\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/{{userId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				},
+				"description": "Update user with PUT"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER WITH PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"isAdmin\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/{{userId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				},
+				"description": "update user with PATCH"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE REVIEW (uses PRODUCT and USER)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d5dc437-b72a-40e6-9c1b-1b2c8a35c1bd",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"reviewId\", jsonData._id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\": \"This is a review for the cat\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/{{userId}}/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"{{userId}}",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET REVIEWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET REVIEW  BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/{{reviewId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"{{reviewId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER WITH ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/users/{{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				},
+				"description": "Delete user by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a255da5f-f5ee-45b7-8410-c1983959c4c9",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"userId\", jsonData._id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"user\",\n\t\"isAdmin\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Create user"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE REVIEW USER WITH PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\": \"Updated comment with PUT\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/{{reviewId}}/{{userId}}/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"{{reviewId}}",
+						"{{userId}}",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE REVIEW WITH PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\": \"Comment changed after PATCH\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/{{reviewId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"{{reviewId}}"
+					]
+				},
+				"description": "product change with PATCH"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE REVIEW BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/{{reviewId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"{{reviewId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE PRODUCT WITH ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER 2 WITH ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/users/{{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"{{userId}}"
+					]
+				},
+				"description": "Delete user by ID"
+			},
+			"response": []
+		}
+	]
+}

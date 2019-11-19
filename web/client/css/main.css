@@ -1,0 +1,57 @@
+body {
+	overflow-x: hidden;
+}
+
+.navbar {
+  margin-bottom: 40px;
+}
+
+.close {
+	color: black !important;
+	
+}
+
+
+.card {
+	position: relative;
+	margin-bottom: 2em !important;
+	flex-grow: 1; 
+	max-width:100%;
+	min-width: 7em !important;
+	min-height: 28em !important;
+}
+
+
+
+.card img {
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.card-body {
+	margin-top: auto;
+	bottom: 0;
+	min-height: 15em !important;
+}
+
+
+.card-footer {
+	width: 100%;
+	float: right;
+	position: absolute;
+	bottom: 0 !important;
+}
+
+.card-footer a {
+	width: 40%;
+	min-width: 6em !important;
+}
+
+.productView button {
+	width: 80%;
+	min-width: 6em !important;
+}
+
+

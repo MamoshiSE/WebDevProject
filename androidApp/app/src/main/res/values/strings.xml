@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Group9</string>
+    <string name="productImageDesc">ProductImage</string>
+    <string name="loadingProducts">Loading Products</string>
+    <string name="emptylist">No products found</string>
+    <string name="basketText">Basket</string>
+    <string name="homeText">Home</string>
+    <string name="buyBtnText">Buy</string>
+    <string name="title_activity_review_view">ReviewView</string>
+    <string name="reviewTopText">Reviews for %1$s</string>
+    <string name="noReviewsText">This item has no reviews yet</string>
+    <string name="loadingReviews">Loading Reviews</string>
+
+</resources>
